@@ -64,7 +64,9 @@ function removeFromCart(item) {
 }
 
 function placeOrder(cardNumber) {
-  // write your code here
+  // ✓ doesn't place the order if a credit card number is not provided
+  // ✓ places an order when a credit card number is provided
+  // ✓ empties the cart
   var msg = "Sorry, we don't have a credit card on file for you."
   if (cardNumber !== '' || typeof cardNumber !== 'undefined') {
     msg = `Your total cost is \$${total()}, which will be charged to the card ${cardNumber}.`
