@@ -13,20 +13,43 @@ function setCart(c) {
 // create an "item" object consist of two key-value pairs:  itemName, itemPrice
 // the price of each item is a randomly-generated integer between 1 and 100.
 function addToCart(item) {
-  var anItem = new Object({'itemName':  item, 'itemPrice': Math.floor((Math.random() * 100) + 1)})
+  var newItem = new Object({'itemName':  item, 'itemPrice': Math.floor((Math.random() * 100) + 1)})
   cart.push(newItem)
+  return(`${newItem.itemName} has been added to your cart.`)
 }
 
+// loop over every item in the cart:
+// prints 'Your shopping cart is empty.' if the cart is empty
+// print the cart contents in the format below:
+// "In your cart, you have (item) at $(price), (item) at $(price), and (item) at $(price).
 function viewCart() {
-  // write your code here
+  var msg = "In your cart, you have "
+  if (cart.length === 0) {
+    msg = "Your shopping cart is empty."
+  } else if (cart.length === 1) {
+    msg += `${cart[0].itemName} at \$${cart[0].itemPrice}.`
+  } else {
+    msg = "In your cart, you have "
+    for (let i = 0; i < cart.length; ++i) {
+      (i === cart.length -1) ? msg += `and ${cart[i].itemName} at \$${cart[i].itemPrice}.` : msg += `${cart[i].itemName} at \$${cart[i].itemPrice}, `
+    }
+  }
+  return(msg)
 }
 
 function total() {
-  // write your code here
+  // iterates through the cart array, and returns the current total value of the items in the cart.
+  var total = 0
+  var i = 0
+  while (i < cart.length) {
+    total += cart[i].itemPrice
+    ++i
+  }
+  return total
 }
 
 function removeFromCart(item) {
-  // write your code here
+  // accepts one argument, remove the name of the item
 }
 
 function placeOrder(cardNumber) {
