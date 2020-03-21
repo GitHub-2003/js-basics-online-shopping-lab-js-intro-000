@@ -57,7 +57,7 @@ function removeFromCart(item) {
       cart.splice(1,1)
     }
   }
-  if msg === "" {
+  if (msg === "") {
     msg = "That item is not in your cart."
   }
   return msg
