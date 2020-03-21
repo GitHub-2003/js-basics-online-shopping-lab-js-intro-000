@@ -69,6 +69,6 @@ function placeOrder(cardNumber) {
   if (cardNumber) {
     msg = `Your total cost is \$${total()}, which will be charged to the card ${item}.`
     cart.length = 0
-  }    
+  }
   return msg
 }
