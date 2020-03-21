@@ -58,7 +58,7 @@ function removeFromCart(item) {
     }
   }
   if msg === "" {
-    msg = "Your shopping cart is empty."
+    msg = "That item is not in your cart."
   }
   return msg
 }
