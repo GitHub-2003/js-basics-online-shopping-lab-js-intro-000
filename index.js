@@ -48,8 +48,19 @@ function total() {
   return total
 }
 
+// removes the specified item from the cart
+// alerts you if you're trying to remove an item that isn't in your cart
 function removeFromCart(item) {
-  // accepts one argument, remove the name of the item
+  msg = ""
+  for (let i = 0; i < cart.length) {
+    if (cart[i].itemName === item {
+      cart.splice(1,1)
+    }
+  }
+  if msg === "" {
+    msg = "Your shopping cart is empty."
+  }
+  return msg
 }
 
 function placeOrder(cardNumber) {
