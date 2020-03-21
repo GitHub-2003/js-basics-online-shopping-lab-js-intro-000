@@ -52,7 +52,7 @@ function total() {
 // alerts you if you're trying to remove an item that isn't in your cart
 function removeFromCart(item) {
   msg = ""
-  for (let i = 0; i < cart.length) {
+  for (let i = 0; i < cart.length; ++i) {
     if (cart[i].itemName === item {
       cart.splice(1,1)
     }
